@@ -1,4 +1,3 @@
-// app/components/Preloader.tsx
 "use client";
 
 import { useEffect, useState } from 'react';
@@ -14,33 +13,30 @@ const bootSequence = [
   "ACCESS GRANTED"
 ];
 
-const customEase: [number, number, number, number] = [0.76, 0, 0.24, 1];
-
 export default function Preloader() {
   const [textIndex, setTextIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [isUnmounted, setIsUnmounted] = useState(false);
 
   useEffect(() => {
-    // 1. Lock the scroll so the user can't scroll while the preloader is active
     document.body.style.overflow = 'hidden';
 
-    // 2. Rapidly cycle through the boot sequence text
+    // 1. Rapidly cycle through the boot sequence text
     const textInterval = setInterval(() => {
       setTextIndex((prev) => {
         if (prev < bootSequence.length - 1) return prev + 1;
         clearInterval(textInterval);
         return prev;
       });
-    }, 200); // Changes text every 200 milliseconds
+    }, 200);
 
-    // 3. Trigger the slide-up animation after 1.8 seconds
+    // 2. Trigger the slide-up animation after 1.8 seconds
     const slideUpTimeout = setTimeout(() => {
       setIsComplete(true);
-      document.body.style.overflow = 'unset'; // Unlock scroll
+      document.body.style.overflow = ''; 
     }, 1800);
 
-    // 4. Completely remove the component from the DOM after animation finishes
+    // 3. Completely remove the component from the DOM
     const unmountTimeout = setTimeout(() => {
       setIsUnmounted(true);
     }, 2800);
@@ -58,22 +54,22 @@ export default function Preloader() {
     <motion.div
       initial={{ y: 0 }}
       animate={{ y: isComplete ? "-100vh" : 0 }}
-      transition={{ duration: 1, ease: customEase }}
+      transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }} // Hardcoded to bypass strict Vercel errors
       className="fixed inset-0 z-[9999] bg-[#0A0A0A] flex flex-col items-center justify-center pointer-events-none"
     >
-      {/* Centered crosshair detail */}
+      {/* Centered geometric crosshair detail */}
       <div className="absolute inset-0 flex items-center justify-center opacity-20">
         <div className="w-[1px] h-32 bg-[#FAFAFA]"></div>
         <div className="absolute h-[1px] w-32 bg-[#FAFAFA]"></div>
       </div>
 
-      {/* Boot-up text */}
+      {/* Cycling Boot-up text */}
       <div className="font-mono text-xs md:text-sm tracking-[0.2em] text-[#FAFAFA] uppercase relative z-10">
         {bootSequence[textIndex]}
       </div>
       
       {/* Loading bar */}
-      <div className="w-48 h-[1px] bg-white/20 mt-6 relative overflow-hidden">
+      <div className="w-48 md:w-64 h-[1px] bg-white/20 mt-6 relative overflow-hidden">
         <motion.div 
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
