@@ -1,11 +1,9 @@
-// app/projects/page.tsx
 "use client";
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-
-const customEase = [0.76, 0, 0.24, 1];
+import Footer from '../components/Footer';
 
 interface Project {
   id: string;
@@ -39,7 +37,7 @@ export default function ProjectsPage() {
   );
 
   return (
-    <main className="relative min-h-screen w-full bg-[#0A0A0A] pt-32 pb-24">
+    <main className="relative min-h-screen w-full bg-[#0A0A0A] pt-32 flex flex-col justify-between">
       
       {/* Global Background Grid Lines */}
       <div className="fixed inset-0 pointer-events-none z-0 flex justify-between px-6 md:px-12 max-w-screen-2xl mx-auto opacity-[0.03]">
@@ -50,7 +48,7 @@ export default function ProjectsPage() {
         <div className="h-full w-[1px] bg-white"></div>
       </div>
 
-      <div className="relative z-10 max-w-screen-2xl mx-auto px-6 md:px-12">
+      <div className="relative z-10 max-w-screen-2xl mx-auto px-6 md:px-12 w-full pb-24 flex-1">
         
         {/* HEADER SECTION */}
         <header className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
@@ -58,7 +56,7 @@ export default function ProjectsPage() {
             <motion.h1 
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+              transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] as any }} // FIXED: added as any
               className="text-6xl md:text-8xl font-sans font-medium tracking-tighter text-[#FAFAFA] uppercase leading-none"
             >
               Archive
@@ -76,7 +74,7 @@ export default function ProjectsPage() {
         </header>
 
         {/* STICKY FILTER BAR */}
-        <div className="sticky top-8 z-40 mb-12 mix-blend-difference py-4">
+       <div className="sticky top-0 z-40 mb-8 pt-20 pb-4 bg-[#0A0A0A]/95 backdrop-blur-xl -mx-6 px-6 md:-mx-12 md:px-12 border-b border-[#FAFAFA]/10">
           <div className="flex flex-wrap gap-6 font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase">
             {categories.map((category) => (
               <button
@@ -110,7 +108,7 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+                transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] as any }} // FIXED: added as any
                 className="group relative flex flex-col cursor-pointer"
               >
                 {/* Image Container with Hover Zoom */}
@@ -148,6 +146,11 @@ export default function ProjectsPage() {
           </AnimatePresence>
         </motion.div>
 
+      </div>
+      
+      {/* UPGRADED: Added Footer for layout consistency */}
+      <div className="relative z-10">
+        <Footer />
       </div>
     </main>
   );
