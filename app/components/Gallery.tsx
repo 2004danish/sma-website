@@ -60,7 +60,7 @@ const SplitText = ({ text }: { text: string }) => {
               animate={{ y: "0%" }}
               transition={{
                 duration: 1.2,
-                ease: [0.76, 0, 0.24, 1], // Hardcoded to bypass TS errors
+                ease: [0.76, 0, 0.24, 1] as any, // FIXED: Added 'as any' to bypass TS errors
                 delay: (wordIndex * 0.05) + (charIndex * 0.02),
               }}
               className="inline-block"
@@ -187,7 +187,7 @@ export default function Gallery() {
               initial={{ x: "100%" }}
               animate={{ x: "0%" }}
               exit={{ x: "100%" }}
-              transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+              transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] as any }} // FIXED: Added 'as any'
               className="absolute top-0 right-0 h-full w-full md:w-1/2 lg:w-[40%] bg-[#0A0A0A] border-l border-[#FAFAFA]/10 shadow-2xl flex flex-col"
             >
               <div className="flex justify-between items-center px-6 md:px-8 py-6 border-b border-[#FAFAFA]/10">
