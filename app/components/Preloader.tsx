@@ -14,7 +14,7 @@ const bootSequence = [
   "ACCESS GRANTED"
 ];
 
-const customEase = [0.76, 0, 0.24, 1];
+const customEase: [number, number, number, number] = [0.76, 0, 0.24, 1];
 
 export default function Preloader() {
   const [textIndex, setTextIndex] = useState(0);

@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
-const customEase = [0.76, 0, 0.24, 1];
+const customEase: [number, number, number, number] = [0.76, 0, 0.24, 1];
 
 interface FeaturedProject {
   id: string;
