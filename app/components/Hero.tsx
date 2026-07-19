@@ -1,11 +1,8 @@
-// app/components/Hero.tsx
 "use client";
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-
-const customEase: [number, number, number, number] = [0.76, 0, 0.24, 1];
 
 interface HeroProject {
   id: number;
@@ -65,9 +62,7 @@ export default function Hero() {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-20 pointer-events-none"></div>
 
-        {/* THE FIX: Removed 2xl:px-0 so px-12 padding protects the text from the scrollbar */}
         <div className="absolute inset-0 z-30 flex flex-col justify-end px-6 md:px-12 pb-12 md:pb-16 max-w-screen-2xl mx-auto w-full">
-          
           <div className="flex flex-col md:flex-row justify-between items-end w-full gap-8 md:gap-0">
             
             <div className="flex flex-col leading-[0.75] tracking-tighter select-none">
@@ -75,8 +70,7 @@ export default function Hero() {
                 <motion.h1 
                   initial={{ y: "100%" }}
                   animate={{ y: "0%" }}
-                  // Using the numbers directly solves the TypeScript error instantly
-                 transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }} 
+                  transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
                   className="text-[16vw] md:text-[9.5vw] 2xl:text-[145px] font-medium text-[#FAFAFA]"
                 >
                   SYED
@@ -98,7 +92,7 @@ export default function Hero() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1], delay: 0.5 }}
+                transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1], delay: 0.5 }}
                 className="flex flex-col"
               >
                 <span>Architectural</span>
