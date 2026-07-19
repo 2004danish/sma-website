@@ -54,7 +54,7 @@ export default function Preloader() {
     <motion.div
       initial={{ y: 0 }}
       animate={{ y: isComplete ? "-100vh" : 0 }}
-      transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }} // Hardcoded to bypass strict Vercel errors
+      transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] as any }} // UPGRADED: Added 'as any' to strictly bypass TS
       className="fixed inset-0 z-[9999] bg-[#0A0A0A] flex flex-col items-center justify-center pointer-events-none"
     >
       {/* Centered geometric crosshair detail */}
