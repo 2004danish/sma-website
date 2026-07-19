@@ -1,4 +1,3 @@
-// app/components/Archive.tsx
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -23,8 +22,6 @@ const selectedProjects: ArchiveProject[] = [
   { id: "06", title: "Sky Hal Business Center", category: "Commercial", status: "Implemented", area: "12,500 SQ.FT", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop", desc: "Corporate architecture that commands authority with its monolithic structure and intelligent facades." },
   { id: "07", title: "Riverfront Care Ambulatory", category: "Healthcare", status: "In Progress", area: "8,000 SQ.FT", image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop", desc: "Healing spaces designed with natural material palettes, intended to reduce patient anxiety through environmental design." },
 ];
-
-const customEase = [0.76, 0, 0.24, 1];
 
 export default function Archive() {
   const [activeArchiveProject, setActiveArchiveProject] = useState<ArchiveProject | null>(null);
