@@ -58,7 +58,7 @@ export default function ProjectsPage() {
             <motion.h1 
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 1.2, ease: customEase }}
+              transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
               className="text-6xl md:text-8xl font-sans font-medium tracking-tighter text-[#FAFAFA] uppercase leading-none"
             >
               Archive
@@ -110,7 +110,7 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.6, ease: customEase }}
+                transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
                 className="group relative flex flex-col cursor-pointer"
               >
                 {/* Image Container with Hover Zoom */}

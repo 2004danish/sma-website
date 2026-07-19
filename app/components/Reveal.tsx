@@ -17,7 +17,7 @@ export default function Reveal({
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10%" }}
-      transition={{ duration: 1.2, ease: customEase, delay: delay / 1000 }}
+      transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] as any, delay: delay / 1000 }}
     >
       {children}
     </motion.div>

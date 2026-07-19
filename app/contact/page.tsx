@@ -23,7 +23,7 @@ export default function ContactPage() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: customEase }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
             className="font-mono text-xs md:text-sm tracking-[0.2em] uppercase text-[#FAFAFA]/50 mb-8"
           >
             // Direct Inquiry
@@ -35,7 +35,7 @@ export default function ContactPage() {
               href="mailto:sma.mob.ngp@gmail.com"
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: 1.2, ease: customEase, delay: 0.1 }}
+              transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.1 }}
               className="group relative inline-block text-[11vw] md:text-[8vw] 2xl:text-[120px] font-sans font-medium tracking-tighter text-[#FAFAFA] leading-[0.85] hover:text-[#B19F91] transition-colors duration-500"
             >
               SMA.MOB.NGP
@@ -51,7 +51,7 @@ export default function ContactPage() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: customEase, delay: 0.3 }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.3 }}
             className="flex flex-col gap-4"
           >
             <span className="font-mono text-[10px] tracking-[0.2em] text-[#FAFAFA]/40 uppercase">Headquarters</span>
@@ -65,7 +65,7 @@ export default function ContactPage() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: customEase, delay: 0.4 }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.4 }}
             className="flex flex-col gap-4"
           >
             <span className="font-mono text-[10px] tracking-[0.2em] text-[#FAFAFA]/40 uppercase">Social Archive</span>
@@ -79,7 +79,7 @@ export default function ContactPage() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: customEase, delay: 0.5 }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.5 }}
             className="flex flex-col gap-4 md:items-end md:text-right"
           >
             <span className="font-mono text-[10px] tracking-[0.2em] text-[#FAFAFA]/40 uppercase">Press & Media</span>
