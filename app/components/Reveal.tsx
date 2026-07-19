@@ -3,7 +3,7 @@
 
 import { motion } from 'framer-motion';
 
-const customEase = [0.76, 0, 0.24, 1];
+
 
 export default function Reveal({ 
   children, 
