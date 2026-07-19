@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const customEase = [0.76, 0, 0.24, 1];
+const customEase: [number, number, number, number] = [0.76, 0, 0.24, 1];
 
 interface HeroProject {
   id: number;
@@ -76,7 +76,7 @@ export default function Hero() {
                   initial={{ y: "100%" }}
                   animate={{ y: "0%" }}
                   // Using the numbers directly solves the TypeScript error instantly
-transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
+                 transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }} 
                   className="text-[16vw] md:text-[9.5vw] 2xl:text-[145px] font-medium text-[#FAFAFA]"
                 >
                   SYED
@@ -86,7 +86,7 @@ transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
                 <motion.h1 
                   initial={{ y: "100%" }}
                   animate={{ y: "0%" }}
-                  transition={{ duration: 1.4, ease: customEase, delay: 0.1 }}
+                  transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1], delay: 0.1 }}
                   className="text-[16vw] md:text-[9.5vw] 2xl:text-[145px] font-medium text-[#FAFAFA]"
                 >
                   MOBIN
@@ -98,7 +98,7 @@ transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.4, ease: customEase, delay: 0.5 }}
+               transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1], delay: 0.5 }}
                 className="flex flex-col"
               >
                 <span>Architectural</span>
@@ -108,7 +108,7 @@ transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.4, ease: customEase, delay: 0.6 }}
+                transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1], delay: 0.6 }}
                 className="flex flex-col"
               >
                 <span>HQ // NAGPUR, IN</span>
