@@ -75,7 +75,8 @@ export default function Hero() {
                 <motion.h1 
                   initial={{ y: "100%" }}
                   animate={{ y: "0%" }}
-                  transition={{ duration: 1.4, ease: customEase }}
+                  // Using the numbers directly solves the TypeScript error instantly
+transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
                   className="text-[16vw] md:text-[9.5vw] 2xl:text-[145px] font-medium text-[#FAFAFA]"
                 >
                   SYED
