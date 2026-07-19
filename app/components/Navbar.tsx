@@ -85,8 +85,8 @@ export default function Navbar() {
                     <motion.li
                       variants={{
                         initial: { y: "100%" },
-                        animate: { y: "0%", transition: { duration: 1, ease: customEase } },
-                        exit: { y: "100%", transition: { duration: 0.6, ease: customEase } }
+                        animate: { y: "0%", transition: { duration: 1, ease: [0.76, 0, 0.24, 1] as any } },
+                        exit: { y: "100%", transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] as any } }
                       }}
                     >
                       <Link 
