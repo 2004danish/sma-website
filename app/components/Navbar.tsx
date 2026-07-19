@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
-const customEase = [0.76, 0, 0.24, 1];
+
 
 const navLinks = [
   { num: "01", label: "HOME", href: "/" },
@@ -47,7 +47,7 @@ export default function Navbar() {
             initial={{ y: "-100%" }}
             animate={{ y: "0%" }}
             exit={{ y: "-100%" }}
-            transition={{ duration: 1, ease: customEase }}
+           transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
             // UPGRADED: h-[100dvh] prevents mobile scrolling issues
             className="fixed top-0 left-0 w-full h-[100dvh] z-[200] bg-[#0A0A0A] flex flex-col justify-between px-6 md:px-12 py-8"
           >
